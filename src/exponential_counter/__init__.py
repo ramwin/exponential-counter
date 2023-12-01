@@ -8,8 +8,8 @@ counter that can be called multi times
 """
 
 
-class Counter:
-    """basic Liner Counter"""
+class LinearCounter:
+    """basic Linear Counter"""
 
     def __init__(self, start=0, step=1, min_value=None, max_value=None):
         self.value = start
@@ -30,11 +30,11 @@ class Counter:
         self.value += self.step
 
 
-class ExponentialCounter(Counter):
+class ExponentialCounter(LinearCounter):
     """exponential incremental counter"""
 
     def __init__(self, start=0, step=2, min_value=None, max_value=None):
-        return super().__init__(start, step, min_value, max_value)
+        super().__init__(start, step, min_value, max_value)
 
     def increment(self):
         self.value *= self.step

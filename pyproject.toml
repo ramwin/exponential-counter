@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "incremental-counter"
+name = "exponential-counter"
 dynamic = ["version"]
 description = ''
 readme = "README.md"
@@ -27,12 +27,12 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/unknown/incremental-counter#readme"
-Issues = "https://github.com/unknown/incremental-counter/issues"
-Source = "https://github.com/unknown/incremental-counter"
+Documentation = "https://github.com/unknown/exponential-counter#readme"
+Issues = "https://github.com/unknown/exponential-counter/issues"
+Source = "https://github.com/unknown/exponential-counter"
 
 [tool.hatch.version]
-path = "src/incremental_counter/__about__.py"
+path = "src/exponential_counter/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -62,7 +62,7 @@ dependencies = [
   "ruff>=0.0.243",
 ]
 [tool.hatch.envs.lint.scripts]
-typing = "mypy --install-types --non-interactive {args:src/incremental_counter tests}"
+typing = "mypy --install-types --non-interactive {args:src/exponential_counter tests}"
 style = [
   "ruff {args:.}",
   "black --check --diff {args:.}",
@@ -128,7 +128,7 @@ unfixable = [
 ]
 
 [tool.ruff.isort]
-known-first-party = ["incremental_counter"]
+known-first-party = ["exponential_counter"]
 
 [tool.ruff.flake8-tidy-imports]
 ban-relative-imports = "all"
@@ -138,16 +138,16 @@ ban-relative-imports = "all"
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
 [tool.coverage.run]
-source_pkgs = ["incremental_counter", "tests"]
+source_pkgs = ["exponential_counter", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/incremental_counter/__about__.py",
+  "src/exponential_counter/__about__.py",
 ]
 
 [tool.coverage.paths]
-incremental_counter = ["src/incremental_counter", "*/incremental-counter/src/incremental_counter"]
-tests = ["tests", "*/incremental-counter/tests"]
+exponential_counter = ["src/exponential_counter", "*/exponential-counter/src/exponential_counter"]
+tests = ["tests", "*/exponential-counter/tests"]
 
 [tool.coverage.report]
 exclude_lines = [

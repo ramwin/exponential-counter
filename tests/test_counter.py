@@ -6,13 +6,13 @@
 
 from unittest import TestCase
 
-from incremental_counter import Counter, ExponentialCounter
+from exponential_counter import LinearCounter, ExponentialCounter
 
 
 class Test(TestCase):
 
     def test_base(self):
-        counter = Counter(max_value=4)
+        counter = LinearCounter(max_value=4)
         values = [counter() for i in range(8)]
         self.assertEqual(
             values,
